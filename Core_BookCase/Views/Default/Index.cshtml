@@ -1,0 +1,26 @@
+﻿@model List<Core_BookCase.Models.Books>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Kitap Adı</th>
+        <th>Yazar</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.BookNAme</td>
+            <td>@item.Author</td>
+        </tr>
+    }
+</table>
+<h2>Gelecek Yeni Kitaplar</h2>
+@await Component.InvokeAsync("NewBooks")
+<br />
+
+@Html.Partial("_PartialPage")

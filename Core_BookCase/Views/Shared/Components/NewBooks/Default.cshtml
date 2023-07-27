@@ -1,0 +1,17 @@
+﻿@model IEnumerable<Core_BookCase.Models.Books>
+
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>Kitap Adı</th>
+            <th>Yazar Adı</th>
+        </tr>
+        @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.BookNAme</td>
+            <td>@item.Author</td>
+        </tr>
+    }
+    </table>
