@@ -24,7 +24,7 @@ namespace Core_Departman.Controllers
 		{
 			c.Departmans.Add(d);
 			c.SaveChanges();
-			return RedirectToAction("Index", "Depart");
+			return RedirectToAction("Index");
 		}
 
 		public IActionResult DepartDelete(int id)
@@ -34,6 +34,19 @@ namespace Core_Departman.Controllers
 			c.SaveChanges();
 			return RedirectToAction("Index");
 		}
-		
+
+        public IActionResult DepartmanGetir(int id)
+        {
+			var depart = c.Departmans.Find(id);
+			return View("DepartmanGetir", depart);
+        }
+
+		public IActionResult DepartmanGuncelle(Departman d)
+		{
+			var values = c.Departmans.Find(d.Id);
+			values.DepartmanAdi = d.DepartmanAdi;
+			c.SaveChanges();
+			return RedirectToAction("Index");
+		}
 	}
 }

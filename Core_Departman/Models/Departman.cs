@@ -8,5 +8,7 @@ namespace Core_Departman.Models
 		public int Id { get; set; }
 
 		public string? DepartmanAdi { get; set; }
-	}
+
+		public List<Personel>? Personels { get; set; }
+    }
 }

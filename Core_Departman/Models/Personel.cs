@@ -13,5 +13,7 @@ namespace Core_Departman.Models
 		public string? Soyad { get; set; }
 
         public string? Sehir { get; set; }
+
+        public Departman? Depart { get; set; }
     }
 }

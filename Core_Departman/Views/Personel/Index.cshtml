@@ -1,0 +1,38 @@
+﻿@model List<Core_Departman.Models.Personel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<br />
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Şehir</th>
+        <th>Departman</th>
+        <th>Sil</th>
+        <th>Güncelle</th>   
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.PerId</td>
+            <td>@item.Ad</td>
+            <td>@item.Soyad</td>
+            <td>@item.Sehir</td>
+            <td></td>
+            <td><a href="/Depart/DepartDelete/@item.PerId" class="btn btn-danger" onclick="return confirm('Silmek istediğinizden emin misiniz?')">Sil</a></td>
+            <td><a href="/Depart/DepartmanGetir/@item.PerId" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a href="/Personel/NewPersonel/" class="btn btn-primary">Yeni Personel</a>

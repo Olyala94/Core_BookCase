@@ -1,0 +1,18 @@
+﻿@model Core_Departman.Models.Departman
+@{
+    ViewData["Title"] = "DepartmanGetir";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+@using (Html.BeginForm("DepartmanGuncelle", "depart", FormMethod.Post))
+{
+    <b>Departman Id:</b>
+    @Html.TextBoxFor(x=>x.Id, new { @class = "form-control" })
+    <br />
+    <b>Departman Adı:</b>
+    @Html.TextBoxFor(x=>x.DepartmanAdi, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Departman Güncelle</button>
+}
+
+
