@@ -1,0 +1,28 @@
+﻿@model Core_Departman2.Models.Personel
+@{
+    ViewData["Title"] = "PersonelGetir";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+<br />
+@using (Html.BeginForm("PersonelGuncelle", "Personelim", FormMethod.Post))
+{
+    <b>Personel Id:</b>
+    @Html.TextBoxFor(x=>x.PersonelId, new { @class = "form-control" })
+    <br />
+    <b>Personel Adı:</b>
+    @Html.TextBoxFor(x=>x.Ad, new { @class = "form-control" })
+    <br />
+    <b>Soyadı:</b>
+    @Html.TextBoxFor(x=>x.Soyad, new { @class = "form-control" })
+    <br />
+     <b>Şehir:</b>
+    @Html.TextBoxFor(x=>x.Sehir, new { @class = "form-control" })
+    <br />
+    <b>Birim:</b>
+    @Html.TextBoxFor(x=>x.Birim.BirimAdi, new { @class = "form-control" })
+    <br />
+   @* <b>Birim:</b>
+    @Html.DropDownListFor(x=>x.Birim.BirimId,(List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+    <br />*@
+    <button class="btn btn-info">Personel Güncelle</button>
+}
